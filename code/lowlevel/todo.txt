@@ -1,20 +1,5 @@
 - Allow at low_level to have less sensors/actuators
 
-V Comments in a new module - Dani
-
-V Arrays in sensors - Dito -- DONE!!
-    Instead of hardcoded "lightSensor1, lightSensor2, ...", have an array indexed by position in Sensors.py and Actuators.py    
-
-V Tune steps for turning 90º
-
-    ONCE THE TORTOISE IS COMPLETELY BUILT AND WITHOUT WIRES
-    Tune number of steps in turnOnTheSpot (tortoise.py) so that tortoise turns 90º
-
-V Improve random motion
-
-    ONCE THE TORTOISE IS COMPLETELY BUILT AND WITHOUT WIRES
-    Wise combination to moveForwards, moveBackwards, and turn so that it goes smoothly and natural.
-
 - Improve comments and clean code
 
     Dito: sensors.py and actuators.py
@@ -22,12 +7,6 @@ V Improve random motion
     
     Investigate Epydoc - Karam
     
-V debug proximity sensor : Mike (NOW!)
-
-V test new eStop - Dito --- DONE!!!
-
-- CHECK CONVENTION FOR NAMES "toTo" or "to_to"
-
 - IMPORTANT: remove "return" in getSensorData, light
 
 - TRY and CATCH lowlevel messages and say "Tortoise is broken. Please return it to BRL for help."
