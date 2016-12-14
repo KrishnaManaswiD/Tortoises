@@ -1,5 +1,5 @@
 messagesDict = {
-    "greetings": chr(27) + "[2J" + "\n" + "Tortoise alive! Press the pause/resume button to set me going.",
+    "greetings": chr(27) + "[2J" + " \033[5;40;32m       ,-\"\"\"-." + "\n" + "   oo._/ \\___/ \\" + "\n" + "  (____)_/___\\__\\_)     FARSCOPE " + "\n" + "      /_//   \\\\_\\\033[0m" + "\n\n\n" + "Tortoise alive! Press the pause/resume button to set me going.",
     "running": "[TORTOISE RUNNING]",
     "paused": "[TORTOISE PAUSED]",
     "resumed": "[TORTOISE RESUMED]",    
