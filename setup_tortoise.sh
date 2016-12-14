@@ -55,4 +55,13 @@ then
     echo "DONE"
 fi
 
+
+
+echo "Configuring git"
+git config --global user.name "Tortoise"
+git config --global user.email tortoise@brl.ac.uk
+echo "DONE"
+
+
+
 exit 0
