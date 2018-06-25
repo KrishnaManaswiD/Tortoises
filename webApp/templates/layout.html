@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>FARSCOPE Tortoise code editor</title>
+  <meta name="description" content="A simple programming interface for the FARSCOPE Tortoises.">
+  <meta name="author" content="Krishna Manaswi Diguamrti">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/skeleton.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!--style type="text/css" media="screen">
+    #editor {
+        margin: 5px;
+        position: absolute;
+        top: 150px;
+        bottom: 0;
+        left: 2px;
+        right: 0;
+    }
+  </style-->  
+
+  <style type="text/css">
+    #titleWord1 {display:inline-block;margin-right:10px;}
+    #titleWord2 {display:inline-block;}
+  </style>
+
+
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <div id="titleWord1">
+        <h2>Here we go!</h2>
+      </div>
+      <div id="titleWord2">
+        A simple programming interface for the FARSCOPE Tortoises.
+      </div>
+    </div>
+  </header>
+  
+  <!-- Navigation bar -->
+  <div class="container">
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="#">Code</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#gui">Graphical</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#blocks">Blocks</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
+
+  {% block body %}{% endblock %}
+
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
