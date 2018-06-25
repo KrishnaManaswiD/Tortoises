@@ -44,8 +44,6 @@
     #titleWord2 {display:inline-block;}
   </style>
 
-
-
 </head>
 <body>
 
@@ -54,30 +52,34 @@
 
   <!-- Header -->
   <header id="header">
-    <div class="container">
+    
       <div id="titleWord1">
-        <h2>Here we go!</h2>
+        <h3>Here we go!</h3>
       </div>
       <div id="titleWord2">
         A simple programming interface for the FARSCOPE Tortoises.
       </div>
-    </div>
+    
   </header>
   
   <!-- Navigation bar -->
-  <div class="container">
-    <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="#">Code</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="#gui">Graphical</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="#blocks">Blocks</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div class="row">
+    <div class="one column"></div>
+    <div class="eleven columns">
+      <div class="navbar-spacer"></div>
+      <nav class="navbar u-almost-full-width">
+        
+          <ul class="navbar-list">
+            <li class="navbar-item"><a class="navbar-link" href="#">Code</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="#gui">Graphical</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="#blocks">Blocks</a></li>
+          </ul>
+        
+      </nav>   
+    </div>
   </div>
-  
+
+  </br>
 
   {% block body %}{% endblock %}
 

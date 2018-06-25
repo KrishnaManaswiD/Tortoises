@@ -2,22 +2,32 @@
 
 {% block body %}
 	
+
+	
 	<!-- Programming interface -->
-	<div class="container" id="mainInterface"> <!--style="width:700px; height:700px"-->
-		<div class="docs-section" id="inputDiv"> <!--style="width:700px; height:400px"-->
-			<form id="editorForm" method="post" action="#">
-				<button type="submit" class="button-primary" value="Run">Run</button>
-				
-				<textarea id="editorText" name="editorText" class="u-full-width" rows="15" cols="100" style="display:none">{{ displayText }}</textarea>
-			</form>
-		</div>
-		<div id="outputDiv"> <!--style="width:700px; height:300px"-->
-			<h6 class="docs-header">Console output:</h6>
-			<form id="output">
-				<textarea id="outputText" name="outputText" rows="15" cols="100">{{ outputText }}</textarea>
-			</form>
+	<div class="row">
+	    <div class="one column"></div>
+	    <div class="eleven columns" id="mainInterface">
+			<div id="inputDiv">
+				<form id="editorForm" method="post" action="#">
+					<button type="submit" class="button-primary" value="Run">Run</button>
+					
+					<textarea id="editorText" name="editorText" rows="15" cols="100" style="display:none">{{ displayText }}</textarea>
+				</form>
+			</div>
+			<div id="outputDiv"> <!--style="width:700px; height:300px"-->
+				<h6 class="docs-header">Console output:</h6>
+				<form id="output">
+					<textarea id="outputText" name="outputText" class="u-full-width">{{ outputText }}</textarea>
+				</form>
+			</div>
 		</div>
 	</div>
+	
+
+
+	
+	
 	
 
 	<script src="{{ url_for('static',filename='ace-builds/src-noconflict/ace.js') }}"></script>
