@@ -15,7 +15,7 @@ while True:
     responseSensor = Cora.getSensorData(SensorType.touch,1)
     stimulusSensor = Cora.getSensorData(SensorType.touch,2)
 
-    print "Resp=%f stim=%f learn=%f assoc=%f" % (responseSensor,stimulusSensor,learnAssoc,assocFlag)
+    print("Resp=%f stim=%f learn=%f assoc=%f") % (responseSensor,stimulusSensor,learnAssoc,assocFlag)
 
     # response always triggered by main sensor
     if responseSensor == 1:

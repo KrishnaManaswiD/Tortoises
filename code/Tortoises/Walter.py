@@ -11,24 +11,24 @@ while True:
 
     if frontSwitch ==1 and backSwitch ==0:
 
-        print "Obstacle in front - moving backwards"    
+        print("Obstacle in front - moving backwards")
         Walter.setLEDValue(1, 0) #self.setLEDValue(position, value)
         Walter.setLEDValue(2, 1) #self.setLEDValue(position, value)
         lastMove = "back"
 
     elif backSwitch ==1 and frontSwitch ==1:
 
-        print "Can't move!"    
+        print("Can't move!")
 
     elif frontSwitch ==0 and backSwitch ==1:
 
-        print "Obstacle behind - moving forwards"    
+        print("Obstacle behind - moving forwards")
         Walter.setLEDValue(1, 1) #self.setLEDValue(position, value)
         Walter.setLEDValue(2, 0) #self.setLEDValue(position, value)
         lastMove = "forward"
 
     else:
-        print "Exploring"
+        print("Exploring")
         Walter.setLEDValue(1, 1) #self.setLEDValue(position, value)
         Walter.setLEDValue(2, 1) #self.setLEDValue(position, value)
 

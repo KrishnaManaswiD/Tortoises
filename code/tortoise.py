@@ -205,11 +205,11 @@ class Tortoise:
         global lowerBoundLight, upperBoundLight, isLightCalibrated
 
         messages.printMessage('calibration_ambient')
-        raw_input()
+        input()
         lowerBoundLight = self.sensors.readSensor(enums.SensorType.light, 1)
 
         messages.printMessage('calibration_light_source')
-        raw_input()
+        input()
         upperBoundLight = self.sensors.readSensor(enums.SensorType.light, 1)
 
         isLightCalibrated = True

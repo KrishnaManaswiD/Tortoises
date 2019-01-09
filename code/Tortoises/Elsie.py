@@ -9,12 +9,12 @@ while True:
 
     if proxSensor == 1:
 
-        print "Obstacle detected behind"
+        print("Obstacle detected behind")
         Elsie.setLEDValue(2, 1) #self.setLEDValue(position, value)
         Elsie.moveForwards(150)
 
     else:
 
-        print "No obstacle detected"
+        print("No obstacle detected")
         Elsie.setLEDValue(2, 0) #self.setLEDValue(position, value)
         Elsie.doRandomMovement()

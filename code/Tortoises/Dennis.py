@@ -13,18 +13,18 @@ while True:
 
     if rightSensor == 1:
 
-        print "Obstruction right"
+        print("Obstruction right")
         Dennis.setLEDValue(1, 1) 
         Dennis.turnOnTheSpot(20,Direction.backwards_right)
 
     elif leftSensor == 1:
 
-        print "Obstruction left"
+        print("Obstruction left")
         Dennis.setLEDValue(2,1)
         Dennis.turnOnTheSpot(20,Direction.backwards_left)
 
     else:
 
-        print "I'm wandering..."
+        print("I'm wandering...")
         Dennis.moveForwards(30)
 

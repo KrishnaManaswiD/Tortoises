@@ -26,4 +26,4 @@ messagesDict = {
 }
 
 def printMessage(code):
-    print messagesDict[code]
+    print(messagesDict[code])

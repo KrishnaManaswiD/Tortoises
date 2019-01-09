@@ -9,11 +9,11 @@ while True:
 
     if touchSensor == 1:
 
-        print "Switch is on"
+        print("Switch is on")
         Grey.setLEDValue(1, 1) #self.setLEDValue(position, value)
         Grey.moveForwards(50)
 
     else:
 
-        print "Switch is off"
+        print("Switch is off")
         Grey.setLEDValue(1, 0) #self.setLEDValue(position, value)
