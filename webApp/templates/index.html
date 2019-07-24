@@ -11,8 +11,7 @@
 			<div id="inputDiv">
 				<form id="editorForm" method="post" action="#">
 					<button type="submit" class="button-primary" value="Run">Run</button>
-					
-					<textarea id="editorText" name="editorText" rows="15" cols="100" style="display:none">{{ displayText }}</textarea>
+					<textarea id="editorText" name="editorText" style="display:none">{{ displayText }}</textarea>
 				</form>
 			</div>
 			<div id="outputDiv"> <!--style="width:700px; height:300px"-->
@@ -40,7 +39,7 @@
 	    var textarea = document.getElementById("editorText");
 	    var editorDiv = document.createElement("div");
 		editorDiv.id = "editor";
-		editorDiv.style.width = "700px";//textarea.style.width;
+		editorDiv.style.width = "1000px";//textarea.style.width;
 		editorDiv.style.height = "300px";//textarea.style.height;
 		editorForm.appendChild(editorDiv);
 		textarea.style.display = "none";
