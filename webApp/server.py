@@ -7,22 +7,32 @@ app = Flask(__name__)
 def homepage():
 	defaultText = "print('hello')"
 	if request.method == "POST":
-		receivedText = request.form['editorText']
-		outputText = saveTextAndRun(receivedText)
-		return render_template('index.html', displayText = receivedText, outputText = outputText)
+		if request.form.get('Run_button') == 'Run':
+			textEnteredInEditor = request.form['editorText']
+			textToDisplay = saveTextAndRun(textEnteredInEditor)
+			return render_template('index.html', displayText = textEnteredInEditor, outputText = textToDisplay)
+		elif request.form.get('Save_button') == 'Save':
+			textEnteredInEditor = request.form['editorText']
+			saveText(textEnteredInEditor)
+			return render_template('index.html', displayText = textEnteredInEditor, outputText = "File saved")
+		else:
+			return render_template('index.html', displayText = defaultText, outputText = "")
 	else:
 		return render_template('index.html', displayText = defaultText, outputText = "")
 	
-def saveTextAndRun(receivedText):
+def saveTextAndRun(textEnteredInEditor):
 	with open('tortoiseCode/saveCode.py','w') as content_file:
-		content_file.write(receivedText)
-	#exec(receivedText)
+		content_file.write(textEnteredInEditor)
+	#exec(textEnteredInEditor)
 	subprocess.call(["python tortoiseCode/saveCode.py 2>&1 | tee terminalOutput.txt"], shell=True)
 	#subprocess.call(["python3", "saveCode.py", "2>&1|tee terminalOutput.txt"])
 	with open('terminalOutput.txt', 'r') as content_file:
 		content = content_file.read()
 		return content
 
+def saveText(textEnteredInEditor):
+	with open('tortoiseCode/saveCode.py','w') as content_file:
+		content_file.write(textEnteredInEditor)
 
 
 if __name__ == '__main__':

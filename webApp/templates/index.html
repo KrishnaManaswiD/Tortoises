@@ -4,13 +4,17 @@
 	
 
 	
-	<!-- Programming interface -->
+	<!-- Programming interface ––––––––––––––––––––––––––––––––––––––––––––––––––-->
 	<div class="row">
 	    <div class="one column"></div>
 	    <div class="eleven columns" id="mainInterface">
 			<div id="inputDiv">
 				<form id="editorForm" method="post" action="#">
-					<button type="submit" class="button-primary" value="Run">Run</button>
+					<button type="submit" class="button-primary" name="Run_button" value="Run">Run</button>
+					&nbsp;&nbsp;&nbsp;
+					<button type="submit" class="button-primary" name="Save_button" value="Save">Save</button>
+					<button type="submit" class="button-primary" name="New_button" value="New">New</button>
+					<button type="submit" class="button-primary" name="Open_button" value="Open">Open</button>
 					<textarea id="editorText" name="editorText" style="display:none">{{ displayText }}</textarea>
 				</form>
 			</div>
@@ -23,31 +27,30 @@
 		</div>
 	</div>
 	
-
-
 	
-	
-	
-
+	<!-- Scripts ––––––––––––––––––––––––––––––––––––––––––––––––––-->
 	<script src="{{ url_for('static',filename='ace-builds/src-noconflict/ace.js') }}"></script>
 	<script src="{{ url_for('static',filename='ace-builds/src-noconflict/mode-python.js') }}"></script>
 	<script src="{{ url_for('static',filename='ace-builds/src-noconflict/theme-monokai.js') }}"></script>
-	
+	<script src="{{ url_for('static',filename='ace-builds/src-noconflict/theme-xcode.js') }}"></script>
+
+
 	<script>
 	    // Hook up ACE editor to the python textarea
 	    var editorForm = document.getElementById("editorForm");
 	    var textarea = document.getElementById("editorText");
 	    var editorDiv = document.createElement("div");
 		editorDiv.id = "editor";
-		editorDiv.style.width = "1000px";//textarea.style.width;
+		editorDiv.style.width = textarea.style.width;
 		editorDiv.style.height = "300px";//textarea.style.height;
 		editorForm.appendChild(editorDiv);
 		textarea.style.display = "none";
 
 		// create ace editor in the div created above
 	    var editor = ace.edit(editorDiv);
-	    editor.setTheme("ace/theme/monokai");
+	    editor.setTheme("ace/theme/xcode");
 		editor.setFontSize(14);
+		editor.setShowPrintMargin(false);
 
 	    editor.getSession().setMode("ace/mode/python");
 	    editor.getSession().setValue(textarea.value);
