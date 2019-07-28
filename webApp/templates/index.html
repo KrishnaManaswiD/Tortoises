@@ -9,19 +9,35 @@
 	    <div class="one column"></div>
 	    <div class="eleven columns" id="mainInterface">
 			<div id="inputDiv">
+				Currently open file: 
+				<textarea id="currentFileName" name="currentFileName" rows="1" cols="25">Untitled</textarea>
+				<!-- <span id="currentFileName" name="currentFileName">mo</span> -->
+				<input type="file" id="fileElem" name="file_elem" hidden="hidden">
+				<button class="button-primary" name="Choose_file_button" id="Choose_file_button">Choose New</button>
+
+
 				<form id="editorForm" method="post" action="#">
+					
+					
+					
+
+					<br>
 					<button type="submit" class="button-primary" name="Run_button" value="Run">Run</button>
 					&nbsp;&nbsp;&nbsp;
 					<button type="submit" class="button-primary" name="Save_button" value="Save">Save</button>
-					<button type="submit" class="button-primary" name="New_button" value="New">New</button>
-					<button type="submit" class="button-primary" name="Open_button" value="Open">Open</button>
+					<!-- <label for="fileElem">Open</label> -->
+					<!-- <button type="submit" class="button-primary" name="New_button" value="New">New</button> -->
+					
+					
+					
 					<textarea id="editorText" name="editorText" style="display:none">{{ displayText }}</textarea>
+					
 				</form>
 			</div>
 			<div id="outputDiv"> <!--style="width:700px; height:300px"-->
 				<h6 class="docs-header">Console output:</h6>
 				<form id="output">
-					<textarea id="outputText" name="outputText" class="u-full-width">{{ outputText }}</textarea>
+					<pre id="outputText" name="outputText" class="u-full-width">{{ outputText }}</pre>
 				</form>
 			</div>
 		</div>
@@ -57,6 +73,43 @@
 
 
 	    editor.getSession().on('change', function(){textarea.value = editor.getSession().getValue(); return false; });
+
+
+	    currentFileElem = document.getElementById("currentFileName");
+	    currentFileElem.style.position = "absolute";
+	    currentFileElem.style.height = "50px";
+
+	    const chooseFileBtn = document.getElementById("Choose_file_button");
+		chooseFileBtn.addEventListener("click", function() {
+  			fileElem.click();
+    	});
+
+
+	    fileElem = document.getElementById("fileElem");
+		fileElem.addEventListener("change", function() 
+		{
+  			if(fileElem.value)
+  			{
+  				const fileList = fileElem.files; /* now you can work with the file list */
+  				//currentFileElem.innerHTML = fileList[0].name;
+  				currentFileElem.value = fileList[0].name;
+  			}
+  			else
+  			{
+  				//currentFileElem.innerHTML = "none chosen";
+  				currentFileElem.value = "none chosen";
+  			}
+
+		});
+
+
+
+	    
+
+
+  		
+
+		
 
 	</script>
 {% endblock %}
