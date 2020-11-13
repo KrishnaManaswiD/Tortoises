@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>FARSCOPE Tortoise code editor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<style type="text/css">
+			html { font-family: Arial, Helvetica, sans-serif; color: #333; }
+			body { background: #ccc; margin: 0; }
+			#container { width: 1500px; margin: 0 auto; background: #fff; }
+			#header { width: 100%; height: 100px; border-bottom: 1px solid black; }
+			.panel { float: left; padding: 5px; height: 300px; }
+			.left, .right { width: 20%; }
+			.middle { width: 58%; }
+			.interface:after { content: ""; display: table; clear: both; }
+			.dragBox { float: left; width: 50px; height: 50px; margin: 10px; padding: 10px; border: 1px solid black; }
+			#footer { width: 100%; border-top: 1px solid black; }
+		</style>
+
+		<!-- SCRIPTS FOR DRAG AND DROP FUNCTIONALITY -->
+		<script>
+			function dragover(ev) {
+			    ev.preventDefault();
+			}
+
+			function dragstart(ev) {
+				// Add the id of the drag source element to the drag data payload so it is available when the drop event is fired
+			    ev.dataTransfer.setData("text", ev.target.id);
+			    // Tell the browser both copy and move are possible
+ 				ev.effectAllowed = "copyMove";
+			}
+
+			function drop(ev) {
+			    ev.preventDefault();
+			    // Get the id of drag source element (that was added to the drag data payload by the dragstart event handler)
+ 				var id = ev.dataTransfer.getData("text");
+ 				// Only Move the element if the source and destination ids are both "move"
+				/*if (id == "src_move" && ev.target.id == "dest_move")
+					ev.target.appendChild(document.getElementById(id));
+				*/
+				// Copy the element if the source and destination ids are both "copy"
+				if (id == "s1" && ev.target.id == "p1")
+				{
+					var nodeCopy = document.getElementById(id).cloneNode(true);
+					nodeCopy.id = "newId";
+					ev.target.appendChild(nodeCopy);
+				}
+				if (id == "a1" && ev.target.id == "p2")
+				{
+					var nodeCopy = document.getElementById(id).cloneNode(true);
+					nodeCopy.id = "newId";
+					ev.target.appendChild(nodeCopy);
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		
+		<!-- CONTAINER -->
+		<div id="container">
+			<!-- HEADER -->
+			<div id="header">
+				<h1>GUI for programming a tortoise</h1>
+				<p>programming icons go here</p>
+			</div>
+
+			<!-- INTERFACE AREA -->
+			<div class="interface">
+				<div class="panel left" id="sensorPanel" style="background-color:#aaa;">
+					<div class="dragBox" ondrop="drop(event)" ondragover="dragover(event)">
+						<p id="s1" draggable="true" ondragstart="dragstart(event)" style="text-align:center"> S1 </p>
+					</div>
+				</div>
+				<div class="panel middle" id="programPanel" style="background-color:#bbb;">
+					<div class="dragBox" id="p1" ondrop="drop(event)" ondragover="dragover(event)" style="text-align:center"></div>
+					<div class="dragBox" id="p2" ondrop="drop(event)" ondragover="dragover(event)" style="text-align:center"></div>
+				</div>
+				<div class="panel right" id="actionPanel" style="background-color:#aaa;">
+					<div class="dragBox" ondrop="drop(event)" ondragover="dragover(event)">
+						<p id="a1" draggable="true" ondragstart="dragstart(event)" style="text-align:center"> A1 </p>
+					</div>
+				</div>	
+			</div>
+
+			<!-- FOOTER -->
+			<div id="footer"> footer text</div>
+			
+		</div>
+		
+		<script>
+		    
+		</script>
+	</body>
+</html>
+
+<!--src="../ace-builds-master/src-noconflict/ace.js"

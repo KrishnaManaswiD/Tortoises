@@ -1,0 +1,3 @@
+i am using ace editor as the basis of the code editor. (ace.c9.io)
+
+under static/ace-builds is a locally hosted copy of editor. This is a clone from https://github.com/ajaxorg/ace-builds.git
